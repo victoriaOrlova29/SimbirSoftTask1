@@ -12,7 +12,7 @@ public class FakeUsersData {
     @Getter
     public static final String LastName = faker.name().lastName();
     @Getter
-    public static  String postCode = generatePostCode();
+    public static String postCode = generatePostCode();
     @Getter
     public static String firstName = convertNumbersToLetters(postCode);
 
@@ -34,10 +34,10 @@ public class FakeUsersData {
             char letter = (char) ('a' + (num % 26));
             result.append(letter);
         }
+        String resultString = result.toString();
 
-        return result.toString();
+        return resultString.substring(0, 1).toUpperCase() + resultString.substring(1);
     }
-
 }
 
 

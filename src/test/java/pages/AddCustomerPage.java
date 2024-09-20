@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class AddCustomerPage extends BasePage {
-
     @FindBy(xpath = "//input[@ng-model='fName']")
     private WebElement fillFirstName;
 
@@ -52,5 +51,4 @@ public class AddCustomerPage extends BasePage {
         driver.switchTo().alert().accept();
         return new AddCustomerPage();
     }
-
 }

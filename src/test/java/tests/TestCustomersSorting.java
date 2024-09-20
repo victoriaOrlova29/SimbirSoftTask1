@@ -11,7 +11,7 @@ import java.util.List;
 public class TestCustomersSorting extends BaseTest {
     @Test(description = "Сортировка клиентов")
     public void sortingCustomers() {
-        new ManagerPage().openAddCustomerPage().customersClick();
+        new ManagerPage().openManagerPage().customersClick();
         List<String> firstNameList = CustomersPage.collectCustomersFirstName();
         ListHelpers.sortReverseAlphabetically(firstNameList);
         CustomersPage customersPage = new CustomersPage().clickFirstNameSorting();

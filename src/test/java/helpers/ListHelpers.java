@@ -12,5 +12,4 @@ public class ListHelpers {
     public static void sortReverseAlphabetically(List<String> list) {
         Collections.sort(list, Collections.reverseOrder());
     }
-
 }

@@ -15,16 +15,19 @@ public class ManagerPage extends BasePage {
     public ManagerPage() {
         PageFactory.initElements(driver, this);
     }
+
     @Step("Открываем страницу")
-    public ManagerPage openAddCustomerPage() {
+    public ManagerPage openManagerPage() {
         driver.get(URL);
         return new ManagerPage();
     }
+
     @Step("Нажимаем add Customer ")
     public AddCustomerPage clickAddCust() {
         addCustomer.click();
         return new AddCustomerPage();
     }
+
     @Step("Нажимаем кнопку Customers")
     public CustomersPage customersClick() {
         customersButton.click();

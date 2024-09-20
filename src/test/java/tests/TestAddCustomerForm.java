@@ -11,7 +11,7 @@ import static helpers.FakeUsersData.*;
 public class TestAddCustomerForm extends BaseTest {
     @Test(description = "Создание клиента")
     public void fillCustomerForm() {
-        new ManagerPage().openAddCustomerPage().clickAddCust();
+        new ManagerPage().openManagerPage().clickAddCust();
         AddCustomerPage addCustomerPage = new AddCustomerPage()
                 .fillFirstName(getFirstName())
                 .fillLastName(getLastName())

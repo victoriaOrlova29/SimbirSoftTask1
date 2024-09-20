@@ -24,8 +24,7 @@ public abstract class BaseTest {
 
     @AfterTest
     public void closeDriver() {
-   //     driver.close();
-   //     driver.quit();
+        driver.close();
+        driver.quit();
     }
-
 }

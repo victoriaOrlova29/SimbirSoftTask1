@@ -20,6 +20,9 @@ public class CustomersPage extends BasePage {
     @FindBy(xpath = "//a[@ng-click=\"sortType = 'fName'; sortReverse = !sortReverse\"]")
     private WebElement firstNameFilter;
 
+    @FindBy(xpath = "//button[@ng-click=\"deleteCust(cust)\"]")
+    private WebElement deleteButton;
+
     @Step("Поиск в Customers")
     public CustomersPage searchCustomers(String firstName) {
         searchCustomer.sendKeys(firstName);
@@ -29,6 +32,12 @@ public class CustomersPage extends BasePage {
     @Step("Фильтруем по first name")
     public CustomersPage clickFirstNameSorting() {
         firstNameFilter.click();
+        return new CustomersPage();
+    }
+
+    @Step("Удаляем пользователя")
+    public CustomersPage deleteCustomer() {
+        deleteButton.click();
         return new CustomersPage();
     }
 
@@ -50,25 +59,6 @@ public class CustomersPage extends BasePage {
     public static boolean checkNamesListContainsFirstName(String firstName) {
         List<String> customersList = collectCustomersFirstName();
         return collectCustomersFirstName().contains(firstName);
-    }
-
-    public static void lengthsCustomer(List<String> customersList) {
-
-        List<Integer> lengths = new ArrayList<>();
-        for (String s : customersList) {
-            Integer length = s.length();
-            lengths.add(length);
-        }
-
-        // Находим среднее арифметическое длин
-        double averageLength = lengths.stream()
-                .mapToInt(Integer::intValue)
-                .average()
-                .orElse(0);
-
-      /*  // Находим имя с длиной, ближайшей к среднему
-        Optional<firstName> closestCustomer = collectCustomersFirstName().stream()
-                .min(Comparator.comparingInt(customer -> Math.abs(customersList.length() - averageLength)));*/
     }
 }
 

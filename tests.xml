@@ -4,6 +4,8 @@
     <test name="UI tests">
         <classes>
             <class name="tests.TestAddCustomerForm"/>
+            <class name="tests.TestCustomersSorting"/>
+            <class name="tests.TestDeleteCustomer"/>
         </classes>
     </test>
 </suite>
