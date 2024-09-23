@@ -1,7 +1,7 @@
 package tests;
 
 import helpers.ListHelpers;
-import helpers.NameForDeletion;
+import helpers.SearchNameToDelete;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CustomersPage;
@@ -17,7 +17,7 @@ public class TestDeleteCustomer extends BaseTest {
                 .customersClick();
         List<String> listLongName = CustomersPage.collectCustomersFirstName();
         ListHelpers.sortAlphabetically(listLongName);
-        String nameForDeletion = NameForDeletion.findClosestNameToAverageLength(listLongName);
+        String nameForDeletion = SearchNameToDelete.findClosestNameToAverageLength(listLongName);
         new CustomersPage()
                 .searchCustomers(nameForDeletion)
                 .deleteCustomer()

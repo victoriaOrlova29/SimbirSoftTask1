@@ -18,7 +18,7 @@ public class ManagerPage extends BasePage {
 
     @Step("Открываем страницу")
     public ManagerPage openManagerPage() {
-        driver.get(URL);
+        driver.get(urlFromProperty);
         return new ManagerPage();
     }
 

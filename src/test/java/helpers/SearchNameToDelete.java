@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 
-public class NameForDeletion {
+public class SearchNameToDelete {
     public static String findClosestNameToAverageLength(List<String> names) {
         if (names == null || names.isEmpty()) {
             throw new IllegalArgumentException("Имен нет");

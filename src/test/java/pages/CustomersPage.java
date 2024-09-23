@@ -57,7 +57,6 @@ public class CustomersPage extends BasePage {
     }
 
     public static boolean checkNamesListContainsFirstName(String firstName) {
-        List<String> customersList = collectCustomersFirstName();
         return collectCustomersFirstName().contains(firstName);
     }
 }
